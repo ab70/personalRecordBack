@@ -49,11 +49,11 @@ app.use(cors({
 
 /* This is a middleware that is used to handle cross-site requests. tackle header issue */
 app.use(function(req,res,next){
-    // res.header('Access-Control-Allow-Origin', req.headers.origin);
-    // res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    // res.header('Access-Control-Allow-Credentials', true);
-    res.header("Access-Control-Allow-Origin", "http://192.168.0.107:3000");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Credentials', true);
+    // res.header("Access-Control-Allow-Origin", "http://192.168.0.107:3000");
+    // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     // res.header('Access-Control-Allow-Credentials', true);
     next();
 })
