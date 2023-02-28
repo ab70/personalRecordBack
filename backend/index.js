@@ -42,7 +42,7 @@ app.use(flash())
 //used to handle cross-site requests
 app.use(cors({
     credentials:true,
-    origin: ['https://personal-front.vercel.app','http://192.168.0.105:3000','http://localhost:3000/'],
+    origin: ['https://personal-front.vercel.app','http://192.168.0.105:3000','http://192.168.0.105:3000','http://localhost:3000'],
     //exposedHeaders:['set-cookie'],
 }));
 
