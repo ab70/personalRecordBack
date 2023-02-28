@@ -42,7 +42,7 @@ app.use(flash())
 //used to handle cross-site requests
 app.use(cors({
     credentials:true,
-    origin: ['https://personal-front.vercel.app'],
+    origin: '*',
     //exposedHeaders:['set-cookie'],
 }));
 
