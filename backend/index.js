@@ -9,6 +9,9 @@ const MongoDbStore = require('connect-mongo')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const flash = require('express-flash') //must active when using connect-mongo
+const compression = require('compression')    //use to compress data while sending res to frontend.
+
+
 
 /* Creating an instance of express. */
 const app = express();
@@ -27,6 +30,9 @@ const connection = mongoose.connect(process.env.Mongoose_connect,{useNewUrlParse
 app.listen(PORT,()=>{
     console.log(`Listening to PORT ${PORT}`);
 });
+app.use(compression({
+    level:6
+}))
 app.use(session({
     secret: process.env.SECRET_KEY,
     resave:false,
